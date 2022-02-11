@@ -1,17 +1,8 @@
-
 from collections import defaultdict
 from dataclasses import dataclass
 from itertools import chain, groupby
 import csv
-from csv import DictReader
-from re import A
 from statistics import mean
-import pprint
-from prometheus_client import Counter
-
-from pyrsistent import v 
-
-pp = pprint.PrettyPrinter(indent=3)
 
 @dataclass
 class Transaction:
@@ -155,5 +146,5 @@ if __name__ == "__main__":
     #trans_type(trans) #Q2
 
     
-    #rolling_window(trans, 5, 10) #Q3
+    rolling_window(trans, 5, 10) #Q3
 
