@@ -16,7 +16,7 @@ class Transaction:
     category: str
     transactionAmount: float 
 
-file_path = 'transactions.txt'
+file_path = 'transactions.txt' # file we work with
 
 # empty list to be populated with data
 transactions = []
@@ -76,8 +76,9 @@ def trans_type(trans):
             avg_val = total_trans / len(cat_trans) # average value of transactionAmounts per accountId and category
                         
             print(f'AccountId: {k[0]}, transaction type {k[1]}, average value per transaction {avg_val:.2F}') # prints the output
+
                 
-d = defaultdict(float)
+d = defaultdict(float) # used to accumulate values
 
 def totals_per_cat(transactions):
     """
@@ -137,7 +138,7 @@ def rolling_window(trans, window_size, day): # We pass data, window size and day
         for el in range(0, len(unique_keys_list)): # loop for iterating over the categorical lists AA CC FF
             for st, vals in trans_dict.items(): # loop for iterating over values from trans_dict to compute MAX and AVERAGE stats
                 print(f'''Day {i}  Account ID    {st}    Maximum  {max(vals)}  Average   {mean(vals)}   AA total value {totals_per_cat(trans_AA)[el]} CC total value {totals_per_cat(trans_CC)[el]} FF total value {totals_per_cat(trans_FF)[el]}  ''')
-
+            
 
 if __name__ == "__main__":
     
@@ -155,5 +156,5 @@ if __name__ == "__main__":
     #trans_type(trans) #Q2
 
     
-    rolling_window(trans, 5, 10) #Q3
+    #rolling_window(trans, 5, 10) #Q3
 
