@@ -6,6 +6,10 @@ from statistics import mean
 
 @dataclass
 class Transaction:
+    """
+    This class represents the structure of data
+    in transactions.txt
+    """
     transactionId: str
     accountId: str
     transactionDay: int
@@ -14,11 +18,15 @@ class Transaction:
 
 file_path = 'transactions.txt'
 
+# empty list to be populated with data
 transactions = []
 
 
 def create_transactionDB() :
-
+    """
+    This method loads data into memory and
+    creates data object that we work with
+    """
     with open(file_path) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',') # read the file
         next(csv_reader) # skip the header
@@ -30,10 +38,11 @@ def create_transactionDB() :
     return transactions
 
 
-trans = create_transactionDB()
+trans = create_transactionDB() # loads data into the memory
 
+# this is to make range caps dynamic
+# stores all unique days of the trade
 days = set()
-
 for trans_days in trans:
     days.add(trans_days.transactionDay)
 
@@ -42,7 +51,7 @@ def daytrade_ops(trans):
         
     """
     Calculates the total transaciton value for all transactions for each day
-    TODO: make range cap dynamic
+    
     """
        
     for i in range (trans[0].transactionDay, len(days)+1): 
