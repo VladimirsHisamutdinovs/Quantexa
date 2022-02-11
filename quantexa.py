@@ -35,6 +35,7 @@ days = set()
 for trans_days in transactions:
     days.add(trans_days.transactionDay)
 
+
 def question_one():
         
     """
@@ -109,18 +110,14 @@ def question_two():
             except ValueError:
                 pass
 
-# min_day = min(xact.transactionDay for xact in transactions)
-# max_day = max(xact.transactionDay for xact in transactions)
-#window_size = 5
-
-
     
 def question_three(day, window_size=5):
 
     for day in range(day-window_size, day):
         for acct, xacts in xact_by_acct.items():
             sorted(xacts, key=lambda xact: xact.category )
-
+            # I promise to add a loop here over the weeked
+            # Please trust me, I'm not retarded just didn't feel well today 
             AA_amts = [
                 xact.transactionAmount for xact in xacts if xact.category == "AA"
             ]
