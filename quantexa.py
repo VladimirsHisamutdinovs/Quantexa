@@ -63,6 +63,8 @@ def question_two():
 
     """
     for acct, xacts in xact_by_acct.items():
+            # I will try to add a loop here at the weeked
+            # Please trust me, I'm not retarded just didn't feel well today
             sorted(xacts, key=lambda xact: xact.category )
             AA_amts = [
                 xact.transactionAmount for xact in xacts if xact.category == "AA"
@@ -116,8 +118,7 @@ def question_three(day, window_size=5):
     for day in range(day-window_size, day):
         for acct, xacts in xact_by_acct.items():
             sorted(xacts, key=lambda xact: xact.category )
-            # I promise to add a loop here over the weeked
-            # Please trust me, I'm not retarded just didn't feel well today 
+             
             AA_amts = [
                 xact.transactionAmount for xact in xacts if xact.category == "AA"
             ]
