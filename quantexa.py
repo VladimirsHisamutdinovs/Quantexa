@@ -35,7 +35,6 @@ days = set()
 for trans_days in transactions:
     days.add(trans_days.transactionDay)
 
-
 def question_one():
         
     """
@@ -63,9 +62,9 @@ def question_two():
 
     """
     for acct, xacts in xact_by_acct.items():
-            # I will try to add a loop here at the weeked
-            # Please trust me, I'm not retarded just didn't feel well today
+            # TODO: look into some loop construction
             sorted(xacts, key=lambda xact: xact.category )
+            
             AA_amts = [
                 xact.transactionAmount for xact in xacts if xact.category == "AA"
             ]
@@ -94,9 +93,7 @@ def question_two():
                 xact.transactionAmount for xact in xacts if xact.category == "GG"
             ] 
 
-            amts = [
-                xact.transactionAmount for xact in xacts       
-            ]  
+             
 
             try:
                 print(
